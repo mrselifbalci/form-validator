@@ -4,6 +4,7 @@ const email = document.getElementById('email');
 const password = document.getElementById('password');
 const password2 = document.getElementById('password2');
 
+
 function showError (input,message){
    const formControl = input.parentElement;
    formControl.className = 'form-control error';
@@ -58,6 +59,7 @@ function getFieldName(input){
   return input.id.charAt(0).toUpperCase() + input.id.slice(1);
 }
 
+
 form.addEventListener('submit', function(e){
     e.preventDefault();
     checkRequired([username,email,password,password2])
@@ -65,4 +67,6 @@ form.addEventListener('submit', function(e){
     checkLength(password,6,25);
     checkEmail(email);
     checkPasswordMatch(password,password2)
+  
 })
+
